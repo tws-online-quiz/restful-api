@@ -22,4 +22,4 @@
 - 将使用postman测试接口的页面截图，并放在`result`文件中
 ## 输出规范
 - RESTful API的实现
-- 包含结果截图的result文件夹
+- 包含API测试结果截图的result文件夹
