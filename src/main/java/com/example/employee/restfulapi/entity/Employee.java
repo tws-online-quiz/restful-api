@@ -1,8 +1,6 @@
 package com.example.employee.restfulapi.entity;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 
 @Entity
@@ -23,24 +21,20 @@ public class Employee {
     @NotNull
     private Integer salary;
 
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "address_id")
+    private Address addressId;
+
     @NotNull
     private Integer companyId;
 
-    public Employee(String name, Integer age, String gender, Integer salary, Integer companyId) {
+    public Employee(@NotNull String name, @NotNull Integer age, @NotNull String gender, @NotNull Integer salary, Address addressId, @NotNull Integer companyId) {
         this.name = name;
         this.age = age;
         this.gender = gender;
         this.salary = salary;
+        this.addressId = addressId;
         this.companyId = companyId;
-    }
-
-    public Employee(String name, Integer age, String gender, Integer salary, Integer companyId, Integer id) {
-        this.name = name;
-        this.age = age;
-        this.gender = gender;
-        this.salary = salary;
-        this.companyId = companyId;
-        this.id = id;
     }
 
     public Employee() {
