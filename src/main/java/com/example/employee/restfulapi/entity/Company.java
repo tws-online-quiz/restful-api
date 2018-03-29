@@ -19,13 +19,9 @@ public class Company {
     @Column(name = "employeesNumber")
     private Integer employeesNumber;
 
-    @OneToMany(cascade=CascadeType.ALL,mappedBy="order")
-    private Set<Employee> employeeSet = new HashSet<Employee>();
-
-    public void addItems(Employee item){
-        item.setCompanyId(this);//必须加上这句，因为关系的维护者是OrderItem
-        this.employeeSet.add(item);
+    public Company() {
     }
+
     public Integer getId() {
         return id;
     }

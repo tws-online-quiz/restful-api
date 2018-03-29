@@ -22,25 +22,6 @@ public class Employee {
     @NotNull
     private Integer salary;
 
-    @ManyToOne(cascade={CascadeType.MERGE,CascadeType.REFRESH},optional=false)
-    @JoinColumn(name="company_id")
-    private Company companyId;
-
-    public Employee(@NotNull String name, @NotNull Integer age, @NotNull String gender, @NotNull Integer salary, Company companyId) {
-        this.name = name;
-        this.age = age;
-        this.gender = gender;
-        this.salary = salary;
-        this.companyId = companyId;
-    }
-
-    public Company getCompanyId() {
-        return companyId;
-    }
-
-    public void setCompanyId(Company companyId) {
-        this.companyId = companyId;
-    }
 
     public Employee() {
     }
