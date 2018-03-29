@@ -5,10 +5,11 @@ import javax.validation.constraints.NotNull;
 import java.util.Set;
 
 @Entity
+@Table
 public class Company {
     @Id
     @GeneratedValue
-    private Integer id;
+    private Long id;
     private String companyName;
     private Integer employeesNumber;
 
@@ -25,7 +26,7 @@ public class Company {
         this.employeesNumber = employeesNumber;
     }
 
-    public Company(@NotNull String companyName, @NotNull Integer employeesNumber, Set<Employee> employees) {
+    public Company(String companyName, Integer employeesNumber, Set<Employee> employees) {
         this.companyName = companyName;
         this.employeesNumber = employeesNumber;
         this.employees = employees;
@@ -40,7 +41,7 @@ public class Company {
     }
 
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

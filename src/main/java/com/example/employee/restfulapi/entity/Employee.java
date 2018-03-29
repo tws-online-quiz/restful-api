@@ -10,7 +10,7 @@ import javax.validation.constraints.NotNull;
 public class Employee {
     @Id
     @GeneratedValue
-    private Integer id;
+    private Long id;
     private String name;
     private Integer age;
     private String gender;
@@ -27,7 +27,7 @@ public class Employee {
         this.salary = salary;
     }
 
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
     public Integer getSalary() {
