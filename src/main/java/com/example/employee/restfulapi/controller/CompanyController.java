@@ -19,13 +19,10 @@ public class CompanyController {
     @Autowired
     private CompanyRepository companyRepository;
 
-    @GetMapping(value = "/{id}")
-    public ResponseEntity getCompanies(@PathVariable Long id) throws Exception {
-        Map<String, String> result = new HashMap<>();
-        Company company = companyRepository.findOne(id);
-        String name = company.getCompanyName();
-        result.put("name", name);
-        return new ResponseEntity<>(result, HttpStatus.OK);
+    @GetMapping(value = "")
+    public ResponseEntity getCompanies() throws Exception {
+        List<Company> companyList= companyRepository.findAll();
+        return new ResponseEntity<>(companyList, HttpStatus.OK);
     }
 }
 
