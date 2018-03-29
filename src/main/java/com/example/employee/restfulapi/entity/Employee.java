@@ -11,16 +11,26 @@ public class Employee {
     private Integer age;
     private String gender;
     private Integer salary;
+    private Long companyId;
 
 
     public Employee() {
     }
 
-    public Employee(String name, Integer age, String gender, Integer salary) {
+    public Employee(String name, Integer age, String gender, Integer salary, Long companyId) {
         this.name = name;
         this.age = age;
         this.gender = gender;
         this.salary = salary;
+        this.companyId = companyId;
+    }
+
+    public Long getCompanyId() {
+        return companyId;
+    }
+
+    public void setCompanyId(Long companyId) {
+        this.companyId = companyId;
     }
 
     public Long getId() {

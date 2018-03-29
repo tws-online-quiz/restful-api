@@ -43,13 +43,20 @@ public class EmployeeController {
         return new ResponseEntity<>(result, HttpStatus.OK);
     }
 
+    @GetMapping(value = "/male")
+    ResponseEntity getEmployeeMale(@RequestParam("gender") String gender) throws Exception {
+        List<Employee> employeeList = employeeRepository.findByGender(gender);
+        return new ResponseEntity<>(employeeList, HttpStatus.OK);
+    }
+
     @PostMapping(value = "")
     public ResponseEntity addCompany(@RequestBody Map<String, String> employeeInfo) throws Exception {
         String name = employeeInfo.get("name");
         int age = Integer.parseInt(employeeInfo.get("age"));
         String gender = employeeInfo.get("gender");
         int salary = Integer.parseInt(employeeInfo.get("salary"));
-        employeeRepository.save(new Employee(name, age, gender, salary));
+        Long companyId = (long) Integer.parseInt(employeeInfo.get("companyId"));
+        employeeRepository.save(new Employee(name, age, gender, salary, companyId));
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
 
