@@ -9,6 +9,7 @@ spring:
     hibernate:
       naming:
         physicalStrategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+      ddl-auto: create-drop
 
 server:
   port: 8083

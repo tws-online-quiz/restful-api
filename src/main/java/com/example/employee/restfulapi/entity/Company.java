@@ -9,26 +9,28 @@ public class Company {
     @Id
     @GeneratedValue
     private Integer id;
-
-    @NotNull
     private String companyName;
-
-    @NotNull
     private Integer employeesNumber;
 
-    @Transient
+
+    @OneToMany(cascade = CascadeType.ALL)
+    @JoinColumn(name = "companyId")
     private Set<Employee> employees;
 
     public Company() {
     }
 
-    public Company(@NotNull String companyName, @NotNull Integer employeesNumber) {
+    public Company(String companyName, Integer employeesNumber) {
         this.companyName = companyName;
         this.employeesNumber = employeesNumber;
     }
 
+    public Company(@NotNull String companyName, @NotNull Integer employeesNumber, Set<Employee> employees) {
+        this.companyName = companyName;
+        this.employeesNumber = employeesNumber;
+        this.employees = employees;
+    }
 
-    @OneToMany(mappedBy = "company", cascade = CascadeType.ALL)
     public Set<Employee> getEmployees() {
         return employees;
     }

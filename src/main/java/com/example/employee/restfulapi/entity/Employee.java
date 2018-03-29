@@ -1,6 +1,7 @@
 package com.example.employee.restfulapi.entity;
 
 import javax.persistence.*;
+
 import com.example.employee.restfulapi.entity.Company;
 
 import javax.validation.constraints.NotNull;
@@ -10,44 +11,25 @@ public class Employee {
     @Id
     @GeneratedValue
     private Integer id;
-
-    @NotNull
     private String name;
-
-    @NotNull
     private Integer age;
-
-    @NotNull
     private String gender;
-
-    @NotNull
     private Integer salary;
 
-    @NotNull
-    @Transient
-    private Company company;
 
     public Employee() {
     }
 
-    public Employee(@NotNull String name, @NotNull Integer age, @NotNull String gender, @NotNull Integer salary, @NotNull Company company) {
+    public Employee(String name, Integer age, String gender, Integer salary) {
         this.name = name;
         this.age = age;
         this.gender = gender;
         this.salary = salary;
-        this.company = company;
     }
 
-    @ManyToOne
-    @JoinColumn(name = "company_id")
-    public Company getCompany() {
-        return company;
+    public Integer getId() {
+        return id;
     }
-
-    public void setCompany(Company company) {
-        this.company = company;
-    }
-
     public Integer getSalary() {
         return salary;
     }
