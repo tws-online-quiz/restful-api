@@ -24,6 +24,7 @@ public class Employee {
     private Integer salary;
 
     @NotNull
+    @Transient
     private Company company;
 
     public Employee() {
@@ -38,7 +39,7 @@ public class Employee {
     }
 
     @ManyToOne
-    @JoinColumn(name = "companyId")
+    @JoinColumn(name = "company_id")
     public Company getCompany() {
         return company;
     }

@@ -16,6 +16,7 @@ public class Company {
     @NotNull
     private Integer employeesNumber;
 
+    @Transient
     private Set<Employee> employees;
 
     public Company() {
