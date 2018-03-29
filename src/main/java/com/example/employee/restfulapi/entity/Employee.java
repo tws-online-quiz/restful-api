@@ -2,10 +2,6 @@ package com.example.employee.restfulapi.entity;
 
 import javax.persistence.*;
 
-import com.example.employee.restfulapi.entity.Company;
-
-import javax.validation.constraints.NotNull;
-
 @Entity
 public class Employee {
     @Id
