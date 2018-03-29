@@ -10,16 +10,15 @@ public class Company {
     @Id
     @GeneratedValue
     private Integer id;
-
-    @NotNull
-    @Column(name = "companyName")
     private String companyName;
-
-    @NotNull
-    @Column(name = "employeesNumber")
     private Integer employeesNumber;
 
     public Company() {
+    }
+
+    public Company(String companyName, Integer employeesNumber) {
+        this.companyName = companyName;
+        this.employeesNumber = employeesNumber;
     }
 
     public Integer getId() {

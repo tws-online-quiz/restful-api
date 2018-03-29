@@ -6,5 +6,4 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface CompanyRepository extends JpaRepository<Company, Long> {
-    // 请在下面实现对Company操作方法，可参照Employee
 }

@@ -9,21 +9,29 @@ public class Employee {
     @Id
     @GeneratedValue
     private Integer id;
-
-    @NotNull
     private String name;
-
-    @NotNull
     private Integer age;
-
-    @NotNull
     private String gender;
-
-    @NotNull
     private Integer salary;
-
+    private Long companyId;
 
     public Employee() {
+    }
+
+    public Employee(String name, Integer age, String gender, Integer salary, Long companyId) {
+        this.name = name;
+        this.age = age;
+        this.gender = gender;
+        this.salary = salary;
+        this.companyId = companyId;
+    }
+
+    public Long getCompanyId() {
+        return companyId;
+    }
+
+    public void setCompanyId(Long companyId) {
+        this.companyId = companyId;
     }
 
     public Integer getSalary() {
@@ -36,11 +44,6 @@ public class Employee {
 
     public long getId() {
         return id;
-    }
-
-    public Employee setId(Integer id) {
-        this.id = id;
-        return this;
     }
 
     public String getName() {
@@ -56,17 +59,16 @@ public class Employee {
         return age;
     }
 
-    public Employee setAge(Integer age) {
-        this.age = age;
-        return this;
-    }
 
     public String getGender() {
         return gender;
     }
 
-    public Employee setGender(String gender) {
+    public void setAge(Integer age) {
+        this.age = age;
+    }
+
+    public void setGender(String gender) {
         this.gender = gender;
-        return this;
     }
 }
