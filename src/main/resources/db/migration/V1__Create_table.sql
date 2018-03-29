@@ -9,7 +9,8 @@ CREATE TABLE Employee(
     name VARCHAR(255) NOT NULL,
     age INT NOT NULL,
     gender VARCHAR(10),
-    companyId INT NOT NULL,
-    salary INT NOT NULL
+    companyId INT  NOT NULL,
+    salary INT NOT NULL,
+    FOREIGN KEY (companyId) REFERENCES Company(id)
 ) engine=InnoDB DEFAULT CHARSET = utf8;
 
