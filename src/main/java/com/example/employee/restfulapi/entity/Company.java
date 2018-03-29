@@ -5,7 +5,6 @@ import javax.validation.constraints.NotNull;
 import java.util.Set;
 
 @Entity
-@Table(name = "company")
 public class Company {
     @Id
     @GeneratedValue
@@ -21,6 +20,15 @@ public class Company {
 
     private Set<Employee> employees;
 
+    public Company() {
+    }
+
+    public Company(@NotNull String companyName, @NotNull Integer employeesNumber) {
+        this.companyName = companyName;
+        this.employeesNumber = employeesNumber;
+    }
+
+
     @OneToMany(mappedBy = "company", cascade = CascadeType.ALL)
     public Set<Employee> getEmployees() {
         return employees;
@@ -30,17 +38,6 @@ public class Company {
         this.employees = employees;
     }
 
-    public Company() {
-    }
-
-    public Company(@NotNull String companyName, @NotNull Integer employeesNumber) {
-        this.companyName = companyName;
-        this.employeesNumber = employeesNumber;
-    }
-
-    public Integer getId() {
-        return id;
-    }
 
     public void setId(Integer id) {
         this.id = id;

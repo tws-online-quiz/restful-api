@@ -4,7 +4,6 @@ import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 
 @Entity
-@Table(name = "employee")
 public class Employee {
     @Id
     @GeneratedValue
@@ -25,16 +24,6 @@ public class Employee {
     @NotNull
     private Company company;
 
-    @ManyToOne
-    @JoinColumn(name = "company_id")
-    public Company getCompany() {
-        return company;
-    }
-
-    public void setCompany(Company company) {
-        this.company = company;
-    }
-
     public Employee() {
     }
 
@@ -46,6 +35,18 @@ public class Employee {
         this.company = company;
     }
 
+    @ManyToOne
+    @JoinColumn(name = "company_id")
+    public Company getCompany() {
+        return company;
+    }
+
+    public void setCompany(Company company) {
+        this.company = company;
+    }
+
+
+
 
     public Integer getSalary() {
         return salary;
@@ -53,10 +54,6 @@ public class Employee {
 
     public void setSalary(Integer salary) {
         this.salary = salary;
-    }
-
-    public long getId() {
-        return id;
     }
 
     public Employee setId(Integer id) {
