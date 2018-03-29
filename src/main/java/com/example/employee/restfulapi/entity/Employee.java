@@ -4,6 +4,7 @@ import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 
 @Entity
+@Table(name = "employee")
 public class Employee {
     @Id
     @GeneratedValue
@@ -21,24 +22,30 @@ public class Employee {
     @NotNull
     private Integer salary;
 
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "address_id")
-    private Address addressId;
-
     @NotNull
-    private Integer companyId;
+    private Company company;
 
-    public Employee(@NotNull String name, @NotNull Integer age, @NotNull String gender, @NotNull Integer salary, Address addressId, @NotNull Integer companyId) {
-        this.name = name;
-        this.age = age;
-        this.gender = gender;
-        this.salary = salary;
-        this.addressId = addressId;
-        this.companyId = companyId;
+    @ManyToOne
+    @JoinColumn(name = "company_id")
+    public Company getCompany() {
+        return company;
+    }
+
+    public void setCompany(Company company) {
+        this.company = company;
     }
 
     public Employee() {
     }
+
+    public Employee(@NotNull String name, @NotNull Integer age, @NotNull String gender, @NotNull Integer salary, @NotNull Company company) {
+        this.name = name;
+        this.age = age;
+        this.gender = gender;
+        this.salary = salary;
+        this.company = company;
+    }
+
 
     public Integer getSalary() {
         return salary;

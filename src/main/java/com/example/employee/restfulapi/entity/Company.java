@@ -1,12 +1,11 @@
 package com.example.employee.restfulapi.entity;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 import javax.validation.constraints.NotNull;
+import java.util.Set;
 
 @Entity
+@Table(name = "company")
 public class Company {
     @Id
     @GeneratedValue
@@ -19,6 +18,25 @@ public class Company {
     @NotNull
     @Column(name = "employeesNumber")
     private Integer employeesNumber;
+
+    private Set<Employee> employees;
+
+    @OneToMany(mappedBy = "company", cascade = CascadeType.ALL)
+    public Set<Employee> getEmployees() {
+        return employees;
+    }
+
+    public void setEmployees(Set<Employee> employees) {
+        this.employees = employees;
+    }
+
+    public Company() {
+    }
+
+    public Company(@NotNull String companyName, @NotNull Integer employeesNumber) {
+        this.companyName = companyName;
+        this.employeesNumber = employeesNumber;
+    }
 
     public Integer getId() {
         return id;
