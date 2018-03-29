@@ -1,5 +1,5 @@
 CREATE TABLE Company(
-    id INT PRIMARY KEY,
-    companyName VARCHAR(255) NOT NULL,
-    employeesNumber INT NOT NULL
+    id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    companyName VARCHAR(255),
+    employeesNumber INT(11)
 ) engine=InnoDB DEFAULT CHARSET = gbk;
