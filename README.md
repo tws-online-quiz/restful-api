@@ -40,10 +40,10 @@ DELETE    /employees/1  #删除某个employee
 - 本地启动 MySQL Service,确保本地存在employee_db数据库
 - 并将数据库的 url username password 配置到项目中
 - 使用`./gradlew flywayMigrate`命令进行将数据迁移至employee_db数据库中
-- 使用JPA注解实现Company和Employee的**一对多***关系
+- 使用JPA注解实现Company和Employee的**一对多**关系
 - 实现上述所有RESTful API接口
 - 使用postman对API进行测试
-- 将使用postman测试接口的页面截图，并放在`result`文件中
+- 将使用postman测试接口的页面截图，并放在自己创建`result`文件中
 
 ## 输出规范
 - RESTful API的实现
