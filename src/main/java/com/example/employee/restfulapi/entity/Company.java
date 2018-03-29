@@ -11,11 +11,9 @@ public class Company {
     private Integer id;
 
     @NotNull
-    @Column(name = "companyName")
     private String companyName;
 
     @NotNull
-    @Column(name = "employeesNumber")
     private Integer employeesNumber;
 
     private Set<Employee> employees;

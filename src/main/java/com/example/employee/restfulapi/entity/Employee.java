@@ -45,9 +45,6 @@ public class Employee {
         this.company = company;
     }
 
-
-
-
     public Integer getSalary() {
         return salary;
     }
