@@ -6,10 +6,7 @@ import com.example.employee.restfulapi.repository.CompanyRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.*;
 
@@ -53,6 +50,30 @@ public class CompanyController {
         return new ResponseEntity<>(result, HttpStatus.OK);
     }
 
+    @PostMapping(value = "")
+    public ResponseEntity addCompany(@RequestBody Map<String, String> companyInfo) throws Exception {
+        String companyName = companyInfo.get("companyName");
+        Integer employeesNumber = Integer.parseInt(companyInfo.get("employeesNumber"));
+        companyRepository.save(new Company(companyName, employeesNumber));
+        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+    }
+
+    @PutMapping(value = "/{id}")
+    public ResponseEntity updateCompany(@PathVariable long id, @RequestBody Map<String, String> companyInfo) throws Exception {
+        String companyName = companyInfo.get("companyName");
+        int employeesNumber = Integer.parseInt(companyInfo.get("employeesNumber"));
+        Company company = companyRepository.findOne(id);
+        company.setCompanyName(companyName);
+        company.setEmployeesNumber(employeesNumber);
+        companyRepository.save(company);
+        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+    }
+
+    @DeleteMapping(value = "/{id}")
+    public ResponseEntity deleteCompany(@PathVariable long id) throws Exception {
+        companyRepository.delete(id);
+        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+    }
 
 }
 
