@@ -5,7 +5,6 @@ import javax.validation.constraints.NotNull;
 import java.util.Set;
 
 @Entity
-@Table
 public class Company {
     @Id
     @GeneratedValue
@@ -32,14 +31,9 @@ public class Company {
         this.employees = employees;
     }
 
-    public Set<Employee> getEmployees() {
-        return employees;
+    public Long getId() {
+        return id;
     }
-
-    public void setEmployees(Set<Employee> employees) {
-        this.employees = employees;
-    }
-
 
     public void setId(Long id) {
         this.id = id;
@@ -59,5 +53,13 @@ public class Company {
 
     public void setEmployeesNumber(Integer employeesNumber) {
         this.employeesNumber = employeesNumber;
+    }
+
+    public Set<Employee> getEmployees() {
+        return employees;
+    }
+
+    public void setEmployees(Set<Employee> employees) {
+        this.employees = employees;
     }
 }
