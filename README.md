@@ -22,7 +22,7 @@ DELETE    /companies/1  #删除某个company以及名下所有employees
 GET       /employees    #获取employee列表
 GET       /employees/1  #获取某个具体employee
 GET       /employees/page/1/pageSize/5  #分页查询，page等于1，pageSize等于5
-GET       /employees/male?gender=male  #筛选出所有男性Employee
+GET       /employees/male   #筛选出所有男性Employee
 POST      /employees    #增加一个employee
 PUT       /employees/1  #更新某个employee
 DELETE    /employees/1  #删除某个employee
@@ -43,7 +43,7 @@ DELETE    /employees/1  #删除某个employee
 - 使用JPA注解实现Company和Employee的**一对多**关系
 - 在`controller`中实现上述所有RESTful API接口
 - 使用postman对API进行测试
-- 将使用postman测试接口的页面截图，并放在自己创建`result`文件中
+- 将使用postman测试接口的页面截图，并放在自己创建`result`文件夹中
 
 ## 输出规范
 - RESTful API的实现
