@@ -20,7 +20,7 @@ DELETE    /companies/1  #删除某个company以及名下所有employees
 GET       /employees    #获取employee列表
 GET       /employees/1  #获取某个具体employee
 GET       /employees/page/1/pageSize/5  #分页查询，page等于1，pageSize等于5
-GET       /employees/male?gender=male  #筛选出所有男性Employee
+GET       /employees/male   #筛选出所有男性Employee
 POST      /employees    #增加一个employee
 PUT       /employees/1  #更新某个employee
 DELETE    /employees/1  #删除某个employee
