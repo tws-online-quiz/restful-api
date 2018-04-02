@@ -8,7 +8,7 @@ import javax.validation.constraints.NotNull;
 public class Employee {
     @Id
     @GeneratedValue
-    private Integer id;
+    private Long id;
     private String name;
     private Integer age;
     private String gender;

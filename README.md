@@ -2,10 +2,8 @@
 
 ## 练习描述
 - 在已有的 `Sping Data JPA` 项目基础上，使用JPA的`@OneToMany`注解实现Company和Employee是**一对多**的关系，实现级联删除，查询
-- 学习使用Flyway命令对数据进行迁移
-- 使用RESTful API设计实现Employee和Company的**CURD**(增删改查)操作
-- 使用RESTful API设计实现对Employee和Company的分页查询
-- 使用RESTful API设计实现对Employee的筛选(eg：查询出所有男性Employee)
+- 要求使用Flyway命令对数据进行迁移
+- 要求使用RESTful API设计实现下述对于API
 #### Company API
 ```
 GET       /companies    #获取company列表
@@ -27,6 +25,7 @@ POST      /employees    #增加一个employee
 PUT       /employees/1  #更新某个employee
 DELETE    /employees/1  #删除某个employee
 ```
+- 要求使用postman测试接口的页面截图，并放在自己创建`result`文件中
 
 ## 环境要求
 - java8
@@ -43,7 +42,6 @@ DELETE    /employees/1  #删除某个employee
 - 使用JPA注解实现Company和Employee的**一对多**关系
 - 在`controller`中实现上述所有RESTful API接口
 - 使用postman对API进行测试
-- 将使用postman测试接口的页面截图，并放在自己创建`result`文件中
 
 ## 输出规范
 - RESTful API的实现

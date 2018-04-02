@@ -9,7 +9,7 @@ import java.util.Set;
 public class Company {
     @Id
     @GeneratedValue
-    private Integer id;
+    private Long id;
     private String companyName;
     private Integer employeesNumber;
 
@@ -21,11 +21,11 @@ public class Company {
         this.employeesNumber = employeesNumber;
     }
 
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
