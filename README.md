@@ -1,7 +1,7 @@
 # RESTful API 综合练习
 
 ## 练习描述
-- 在已有的 [Sping Data JPA]() 项目基础上，使用JPA的`@OneToMany`注解实现Company和Employee是**一对多**的关系，实现级联删除，查询
+- 在已有的 [Sping Data JPA](https://school.thoughtworks.cn/learn/program-center/student/index.html#/student/program/11/task/184) 项目基础上，使用JPA的`@OneToMany`注解实现Company和Employee是**一对多**的关系，实现级联删除，查询
 - 要求使用Flyway命令对数据进行迁移
 - 要求实现下述RESTful API
 #### Company API
